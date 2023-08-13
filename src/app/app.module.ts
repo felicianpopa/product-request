@@ -20,7 +20,7 @@ import { ProductsListComponent } from "./components/products-list/products-list.
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ productsList: productsListReducer }),
+    StoreModule.forRoot({ productsListList: productsListReducer }),
     EffectsModule.forRoot([ProductsListEffects]),
   ],
   providers: [],

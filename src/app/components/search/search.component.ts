@@ -9,7 +9,6 @@ import * as ProductListActions from "src/app/state/products-list/products-list.a
 })
 export class SearchComponent {
   productSearchText!: string;
-  productsList!: any[];
 
   constructor(private store: Store) {}
 

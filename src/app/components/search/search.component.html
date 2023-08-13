@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()">
+  <input
+    type="text"
+    name="productSearchText"
+    id="productSearchText"
+    [(ngModel)]="productSearchText"
+    placeholder="Search"
+  />
+  <input type="submit" value="Search" />
+</form>

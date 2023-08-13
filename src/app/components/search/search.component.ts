@@ -1,5 +1,6 @@
-import { Component } from "@angular/core";
-import { ProductSearchService } from "src/app/services/product-search.service";
+import { Component, OnInit } from "@angular/core";
+import { Store } from "@ngrx/store";
+import * as ProductListActions from "src/app/state/products-list/products-list.actions";
 
 @Component({
   selector: "app-search",
@@ -10,18 +11,16 @@ export class SearchComponent {
   productSearchText!: string;
   productsList!: any[];
 
-  constructor(private productSearchService: ProductSearchService) {}
+  constructor(private store: Store) {}
 
   onSubmit() {
     if (!this.productSearchText) {
       alert("pleas enter a text");
       return;
     }
-    this.productSearchService
-      .getProducts(this.productSearchText)
-      .subscribe((products) => {
-        this.productsList = products;
-        console.warn("products ", this.productsList);
-      });
+    this.store.dispatch(
+      ProductListActions.searchItems({ searchTerm: this.productSearchText })
+    );
+    this.productSearchText = "";
   }
 }

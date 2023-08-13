@@ -1,0 +1,10 @@
+{
+  "products": [
+    { "name": "first product" },
+    { "name": "second product" },
+    { "name": "third product" }
+  ],
+  "requested-products": [
+    { "name": "non existing product 1", "productUrl": "nep1url" }
+  ]
+}

@@ -1,0 +1,21 @@
+table {
+  border-collapse: collapse;
+
+  thead {
+    td {
+      background-color: lightblue;
+      font-weight: bold;
+    }
+  }
+
+  tr {
+    &.inProgress {
+      background-color: lightgreen;
+    }
+
+    td {
+      padding: 5px;
+      border: 1px solid #000;
+    }
+  }
+}

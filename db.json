@@ -5,6 +5,25 @@
     { "name": "third product" }
   ],
   "requested-products": [
-    { "name": "non existing product 1", "productUrl": "nep1url" }
+    {
+      "name": "non existing product 1",
+      "productUrl": "nep1url",
+      "status": "inProgress"
+    },
+    {
+      "name": "non existing product 2",
+      "productUrl": "nep2url",
+      "status": "pending"
+    },
+    {
+      "name": "non existing product 3",
+      "productUrl": "nep2url",
+      "status": "pending"
+    },
+    {
+      "name": "non existing product 4",
+      "productUrl": "nep2url",
+      "status": "inProgress"
+    }
   ]
 }

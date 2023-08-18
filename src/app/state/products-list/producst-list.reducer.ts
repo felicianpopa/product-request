@@ -11,8 +11,8 @@ export const productsListReducer = createReducer(
   on(
     // React on specific actions
     ProductsListActions.updateItems,
-    (state, { productsListAction }) => productsListAction
-    // productsListAction is the prop we pass from updateItems
+    (state, { productsListData }) => productsListData
+    // productsListData is the prop we pass from updateItems
   )
 );
 
@@ -20,5 +20,22 @@ export const selectItemsState =
   createFeatureSelector<any[]>("productsListList");
 export const selectProductsList = createSelector(
   selectItemsState,
+  (state) => state
+);
+
+export const requestedProductsListReducer = createReducer(
+  initialState,
+  on(
+    // React on specific actions
+    ProductsListActions.updateRequestedProducts,
+    (state, { requestedProductsData }) => requestedProductsData
+  )
+);
+
+export const requestedProductsState = createFeatureSelector<any[]>(
+  "requestedProductsListList"
+);
+export const requestedProductsList = createSelector(
+  requestedProductsState,
   (state) => state
 );

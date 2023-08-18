@@ -6,7 +6,10 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { StoreModule } from "@ngrx/store";
 import { EffectsModule } from "@ngrx/effects";
-import { productsListReducer } from "./state/products-list/producst-list.reducer";
+import {
+  productsListReducer,
+  requestedProductsListReducer,
+} from "./state/products-list/producst-list.reducer";
 import { ProductsListEffects } from "./state/products-list/products-list.effects";
 
 import { AppComponent } from "./app.component";
@@ -20,7 +23,10 @@ import { ProductsListComponent } from "./components/products-list/products-list.
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    StoreModule.forRoot({ productsListList: productsListReducer }),
+    StoreModule.forRoot({
+      productsListList: productsListReducer,
+      requestedProductsListList: requestedProductsListReducer,
+    }),
     EffectsModule.forRoot([ProductsListEffects]),
   ],
   providers: [],

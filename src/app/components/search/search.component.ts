@@ -18,6 +18,12 @@ export class SearchComponent {
       return;
     }
     this.store.dispatch(
+      ProductListActions.updateItems({ productsListData: [] })
+    );
+    this.store.dispatch(
+      ProductListActions.updateRequestedProducts({ requestedProductsData: [] })
+    );
+    this.store.dispatch(
       ProductListActions.searchItems({ searchTerm: this.productSearchText })
     );
     this.productSearchText = "";

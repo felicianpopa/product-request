@@ -1,3 +1,23 @@
 <ul>
   <li *ngFor="let product of productsListList | async">{{ product.name }}</li>
 </ul>
+
+<table *ngIf="(requestedProductsListList | async)?.length! > 0">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>productUrl</td>
+      <td>status</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr
+      *ngFor="let product of requestedProductsListList | async"
+      [ngClass]="product.status"
+    >
+      <td>{{ product.name }}</td>
+      <td>{{ product.productUrl }}</td>
+      <td>{{ product.status }}</td>
+    </tr>
+  </tbody>
+</table>

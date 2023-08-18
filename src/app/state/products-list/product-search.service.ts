@@ -13,4 +13,12 @@ export class ProductSearchService {
   getProducts(products: string): Observable<any> {
     return this.http.get(`${this.apiUrl}/products?name_like=${products}`);
   }
+
+  getRequestedProducts(products: string): Observable<any> {
+    const result = this.http.get(
+      `${this.apiUrl}/requested-products?name_like=${products}`
+    );
+
+    return result;
+  }
 }

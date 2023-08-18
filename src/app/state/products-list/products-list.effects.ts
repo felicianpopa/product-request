@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { mergeMap, map } from "rxjs";
+import { mergeMap, map, switchMap } from "rxjs";
 import { ProductSearchService } from "./product-search.service";
 import * as ProductListActions from "./products-list.actions";
+import { of } from "rxjs"; // Import the 'of' operator
 
 @Injectable()
 export class ProductsListEffects {
@@ -13,15 +14,25 @@ export class ProductsListEffects {
 
   searchItems$ = createEffect(() =>
     this.actions$.pipe(
-      ofType(ProductListActions.searchItems), // We are listening for actions of type ProductListActions.searchItems
+      ofType(ProductListActions.searchItems),
       mergeMap((action) =>
-        this.productSearchService
-          .getProducts(action.searchTerm) // Get the producst lis from the server. action.searchTerm is defined in products-list.actions as a prop
-          .pipe(
-            map((productsListAction) =>
-              ProductListActions.updateItems({ productsListAction })
-            )
-          )
+        this.productSearchService.getProducts(action.searchTerm).pipe(
+          switchMap((productsListData) => {
+            if (productsListData.length === 0) {
+              return this.productSearchService
+                .getRequestedProducts(action.searchTerm)
+                .pipe(
+                  map((requestedProductsData) =>
+                    ProductListActions.updateRequestedProducts({
+                      requestedProductsData,
+                    })
+                  )
+                );
+            } else {
+              return of(ProductListActions.updateItems({ productsListData }));
+            }
+          })
+        )
       )
     )
   );

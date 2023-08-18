@@ -21,3 +21,6 @@
     </tr>
   </tbody>
 </table>
+<app-product-request-form
+  *ngIf="requestedProductsFoundStatus | async as value"
+></app-product-request-form>

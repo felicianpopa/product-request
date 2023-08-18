@@ -22,11 +22,16 @@ export class ProductsListEffects {
               return this.productSearchService
                 .getRequestedProducts(action.searchTerm)
                 .pipe(
-                  map((requestedProductsData) =>
-                    ProductListActions.updateRequestedProducts({
+                  map((requestedProductsData) => {
+                    if (requestedProductsData.length === 0) {
+                      return ProductListActions.noRequestedProductsFound({
+                        requestedProductsFound: true,
+                      });
+                    }
+                    return ProductListActions.updateRequestedProducts({
                       requestedProductsData,
-                    })
-                  )
+                    });
+                  })
                 );
             } else {
               return of(ProductListActions.updateItems({ productsListData }));

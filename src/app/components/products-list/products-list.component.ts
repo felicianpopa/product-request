@@ -4,6 +4,7 @@ import { Observable } from "rxjs";
 import {
   selectProductsList,
   requestedProductsList,
+  requestedProductsFoundStatus,
 } from "src/app/state/products-list/producst-list.reducer";
 
 @Component({
@@ -14,6 +15,7 @@ import {
 export class ProductsListComponent implements OnInit {
   productsListList: Observable<any[]> = new Observable<any[]>();
   requestedProductsListList: Observable<any[]> = new Observable<any[]>();
+  requestedProductsFoundStatus: Observable<boolean> = new Observable<boolean>();
   constructor(private store: Store) {}
 
   ngOnInit(): void {
@@ -21,6 +23,9 @@ export class ProductsListComponent implements OnInit {
     this.productsListList = this.store.pipe(select(selectProductsList));
     this.requestedProductsListList = this.store.pipe(
       select(requestedProductsList)
+    );
+    this.requestedProductsFoundStatus = this.store.pipe(
+      select(requestedProductsFoundStatus)
     );
   }
 }

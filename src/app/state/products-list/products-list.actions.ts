@@ -17,3 +17,8 @@ export const updateRequestedProducts = createAction(
   "[productsListActionName] Update Requested products",
   props<{ requestedProductsData: any[] }>()
 );
+
+export const noRequestedProductsFound = createAction(
+  "[no requested Products Found] Update Requested products",
+  props<{ requestedProductsFound: boolean }>()
+);

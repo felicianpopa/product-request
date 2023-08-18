@@ -4,6 +4,7 @@ import * as ProductsListActions from "./products-list.actions";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 
 export const initialState: any[] = [];
+export const initialrequestedProductsFoundState: boolean = false;
 
 //productsListReducer will be imported in app.module.ts
 export const productsListReducer = createReducer(
@@ -37,5 +38,23 @@ export const requestedProductsState = createFeatureSelector<any[]>(
 );
 export const requestedProductsList = createSelector(
   requestedProductsState,
+  (state) => state
+);
+
+// Requested products found
+export const requestedProductsFoundStatusReducer = createReducer(
+  initialrequestedProductsFoundState,
+  on(
+    // React on specific actions
+    ProductsListActions.noRequestedProductsFound,
+    (state, { requestedProductsFound }) => requestedProductsFound
+  )
+);
+
+export const requestedProductsFoundStatusState = createFeatureSelector<boolean>(
+  "requestedProductsFoundStatus"
+);
+export const requestedProductsFoundStatus = createSelector(
+  requestedProductsFoundStatusState,
   (state) => state
 );

@@ -18,6 +18,11 @@ export class SearchComponent {
       return;
     }
     this.store.dispatch(
+      ProductListActions.noRequestedProductsFound({
+        requestedProductsFound: false,
+      })
+    );
+    this.store.dispatch(
       ProductListActions.updateItems({ productsListData: [] })
     );
     this.store.dispatch(

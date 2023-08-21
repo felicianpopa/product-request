@@ -17,6 +17,7 @@ import { AppComponent } from "./app.component";
 import { SearchComponent } from "./components/search/search.component";
 import { ProductsListComponent } from "./components/products-list/products-list.component";
 import { ProductRequestFormComponent } from "./components/product-request-form/product-request-form.component";
+import { ButtonComponent } from './components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ProductRequestFormComponent } from "./components/product-request-form/p
     SearchComponent,
     ProductsListComponent,
     ProductRequestFormComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,

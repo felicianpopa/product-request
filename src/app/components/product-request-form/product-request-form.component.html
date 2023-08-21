@@ -32,7 +32,9 @@
     <strong>{{ this.addedProductName }}</strong> was added to the requested
     products list
   </p>
-  <button (click)="showRequestedProducts()">
-    Show me the requested products
-  </button>
+  <app-button
+    bgColor="gray"
+    text="Show me the requested products"
+    (btnClick)="showRequestedProducts()"
+  ></app-button>
 </div>

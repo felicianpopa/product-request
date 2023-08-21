@@ -47,7 +47,7 @@ export const requestedProductsFoundStatusReducer = createReducer(
   on(
     // React on specific actions
     ProductsListActions.noRequestedProductsFound,
-    (state, { requestedProductsFound }) => requestedProductsFound
+    (state, { requestedProductsNotFound }) => requestedProductsNotFound
   )
 );
 

@@ -20,5 +20,5 @@ export const updateRequestedProducts = createAction(
 
 export const noRequestedProductsFound = createAction(
   "[no requested Products Found] Update Requested products",
-  props<{ requestedProductsFound: boolean }>()
+  props<{ requestedProductsNotFound: boolean }>()
 );

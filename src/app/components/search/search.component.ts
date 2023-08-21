@@ -19,7 +19,7 @@ export class SearchComponent {
     }
     this.store.dispatch(
       ProductListActions.noRequestedProductsFound({
-        requestedProductsFound: false,
+        requestedProductsNotFound: false,
       })
     );
     this.store.dispatch(

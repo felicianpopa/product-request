@@ -25,7 +25,7 @@ export class ProductsListEffects {
                   map((requestedProductsData) => {
                     if (requestedProductsData.length === 0) {
                       return ProductListActions.noRequestedProductsFound({
-                        requestedProductsFound: true,
+                        requestedProductsNotFound: true,
                       });
                     }
                     return ProductListActions.updateRequestedProducts({

@@ -1,27 +1,19 @@
-# ProductRequest
+## Story:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+As a user I want to search for a product entering it's name or part of the name. If one ore more products are found in the products list I want to see a list of them. If the product is not found in the existing products list, check the requested-products list. If the product is found here show a table of all the matching products. If the product is not found in any of these lists I want to be able to make a request for this product.
 
-## Development server
+## Acceptance criteria
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**AC1:**
+If the user enters a name eg. "product", which is found in the products list show a list of all the corresponding products
+**AC2:**
+If the user enters a name eg. "non existing", which is not found in the products list but is found in the requested-products list show a table with all the corresponding products
+**AC3:**
+If the user enters a name eg. "newproduct" which is not found in any of the previous lists show a form which will allow the user to make a request for a new product
 
-## Code scaffolding
+## Installation:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+1. Clone the project
+2. run `npm install` from the terminal
+3. run `npm run start-with-server`
+4. you have the urls for the homepage and resources in the teminal

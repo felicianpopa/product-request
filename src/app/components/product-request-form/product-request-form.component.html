@@ -1,1 +1,35 @@
-<p>product-request-form works!</p>
+<div *ngIf="showAddProduct">
+  <p>
+    We do not have this product yet. You can make a request for this product by
+    completing this form
+  </p>
+  <form action="" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="productName">Product name</label>
+      <input
+        type="text"
+        name="productName"
+        [(ngModel)]="productName"
+        placeholder="Enter the product name"
+      />
+    </div>
+    <div>
+      <label for="productUrl">Product url</label>
+      <input
+        type="text"
+        name="productUrl"
+        [(ngModel)]="productUrl"
+        placeholder="Enter the product url"
+      />
+    </div>
+
+    <input type="submit" value="Request this product" />
+  </form>
+</div>
+
+<div *ngIf="showAddProductSuccess">
+  <p>
+    <strong>{{ this.addedProductName }}</strong> was added to the requested
+    products list
+  </p>
+</div>

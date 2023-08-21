@@ -1,29 +1,42 @@
 {
   "products": [
-    { "name": "first product" },
-    { "name": "second product" },
-    { "name": "third product" }
+    {
+      "name": "first product",
+      "id": 1
+    },
+    {
+      "name": "second product",
+      "id": 2
+    },
+    {
+      "name": "third product",
+      "id": 3
+    }
   ],
   "requested-products": [
     {
       "name": "non existing product 1",
       "productUrl": "nep1url",
-      "status": "inProgress"
+      "status": "inProgress",
+      "id": 4
     },
     {
       "name": "non existing product 2",
       "productUrl": "nep2url",
-      "status": "pending"
+      "status": "pending",
+      "id": 5
     },
     {
       "name": "non existing product 3",
       "productUrl": "nep2url",
-      "status": "pending"
+      "status": "pending",
+      "id": 6
     },
     {
       "name": "non existing product 4",
       "productUrl": "nep2url",
-      "status": "inProgress"
+      "status": "inProgress",
+      "id": 7
     }
   ]
 }

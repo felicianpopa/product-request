@@ -1,26 +1,33 @@
-<ul>
-  <li *ngFor="let product of productsListList | async">{{ product.name }}</li>
-</ul>
+<div *ngIf="(productsListList | async)?.length! > 0">
+  <h2>Products list</h2>
+  <ul>
+    <li *ngFor="let product of productsListList | async">{{ product.name }}</li>
+  </ul>
+</div>
 
-<table *ngIf="(requestedProductsListList | async)?.length! > 0">
-  <thead>
-    <tr>
-      <td>Name</td>
-      <td>productUrl</td>
-      <td>status</td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr
-      *ngFor="let product of requestedProductsListList | async"
-      [ngClass]="product.status"
-    >
-      <td>{{ product.name }}</td>
-      <td>{{ product.productUrl }}</td>
-      <td>{{ product.status }}</td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="(requestedProductsListList | async)?.length! > 0">
+  <h2>Products comming soon</h2>
+  <table>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>productUrl</td>
+        <td>status</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let product of requestedProductsListList | async"
+        [ngClass]="product.status"
+      >
+        <td>{{ product.name }}</td>
+        <td>{{ product.productUrl }}</td>
+        <td>{{ product.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <app-product-request-form
   *ngIf="requestedProductsFoundStatus | async as value"
 ></app-product-request-form>

@@ -6,8 +6,10 @@ As a user I want to search for a product entering it's name or part of the name.
 
 **AC1:**
 If the user enters a name eg. "product", which is found in the products list show a list of all the corresponding products
+
 **AC2:**
 If the user enters a name eg. "non existing", which is not found in the products list but is found in the requested-products list show a table with all the corresponding products
+
 **AC3:**
 If the user enters a name eg. "newproduct" which is not found in any of the previous lists show a form which will allow the user to make a request for a new product
 

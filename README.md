@@ -13,6 +13,20 @@ If the user enters a name eg. "non existing", which is not found in the products
 **AC3:**
 If the user enters a name eg. "newproduct" which is not found in any of the previous lists show a form which will allow the user to make a request for a new product
 
+## Real example
+
+I am a genius eMag user and I prefer buying products from eMag instead of other e-Shops because you offer the possibility to pick up certain products from easyBox and I have a certain level of trust in eMag.
+<br>
+You have a partnership with vidaxl but they don't sell all of their products through eMag.
+<br>
+I want to buy the "SolarMax 1000" water fountain but I don't need the battery. Doing a google search the first result for the pump without a battery is on vidaxl.
+<br>
+Supposing that I have never bought anything through vidaxl directly and I prefer doing it thwough eMag I would like the possibility to request this product from emag.
+<br>
+Because I also enter the url where I found the product you have the possibility to check your database and see that you already have a partnership with this seller. You can then show the seller that this product is requested on eMag.
+<br>
+If this requested products list is veiwable by anyone you can also attract new partners which have the possibility to sell this item or have other existing partners add this product.
+
 ## Installation:
 
 1. Clone the project
